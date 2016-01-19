@@ -1,0 +1,25 @@
+{
+  "name": "search-index-getter",
+  "version": "0.0.1",
+  "description": "A lib for retrieving individual documents from a search-index corpus",
+  "main": "lib/docGetter.js",
+  "scripts": {
+    "test": "tape"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/fergiemcdowall/search-index-getter.git"
+  },
+  "keywords": [
+    "search",
+    "index",
+    "get",
+    "retrieve"
+  ],
+  "author": "Fergus McDowall",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/fergiemcdowall/search-index-getter/issues"
+  },
+  "homepage": "https://github.com/fergiemcdowall/search-index-getter#readme"
+}

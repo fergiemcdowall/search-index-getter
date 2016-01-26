@@ -1,8 +1,8 @@
 {
   "name": "search-index-getter",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "description": "A lib for retrieving individual documents from a search-index corpus",
-  "main": "lib/docGetter.js",
+  "main": "docGetter.js",
   "scripts": {
     "test": "tape"
   },

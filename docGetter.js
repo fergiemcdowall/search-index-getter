@@ -1,3 +1,5 @@
+var levelup = require('levelup');
+
 module.exports = function (givenOptions, callback) {
   var docGetter = {}
   getOptions(givenOptions, function(err, options) {

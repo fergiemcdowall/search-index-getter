@@ -1,6 +1,6 @@
 {
   "name": "search-index-getter",
-  "version": "0.0.3",
+  "version": "0.0.4",
   "description": "A lib for retrieving individual documents from a search-index corpus",
   "main": "docGetter.js",
   "scripts": {
@@ -21,5 +21,12 @@
   "bugs": {
     "url": "https://github.com/fergiemcdowall/search-index-getter/issues"
   },
-  "homepage": "https://github.com/fergiemcdowall/search-index-getter#readme"
+  "homepage": "https://github.com/fergiemcdowall/search-index-getter#readme",
+  "dependencies": {
+    "bunyan": "^1.7.1",
+    "leveldown": "^1.4.4",
+    "levelup": "^1.3.1",
+    "lodash": "^4.6.1",
+    "term-vector": "0.0.12"
+  }
 }

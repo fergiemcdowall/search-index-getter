@@ -5,7 +5,6 @@ const leveldown = require('leveldown')
 const levelup = require('levelup')
 const tv = require('term-vector')
 
-
 module.exports = function (givenOptions, callback) {
   var docGetter = {}
   getOptions(givenOptions, function(err, options) {
@@ -58,24 +57,8 @@ var getOptions = function(givenOptions, callbacky) {
   ], function(err, results){
     var options = _.defaults(givenOptions, results[0])
     if (results[1] != null) {
-//      options = _.defaults(options, results[1])
       options.indexes = results[1]
     }
     return callbacky(err, options)
   })
 }
-
-
-// var getOptions = function(givenOptions, callback) {
-//   if (!givenOptions.indexes) {
-//     levelup(givenOptions.indexPath || 'si', {
-//       valueEncoding: 'json'
-//     }, function(err, db) {
-//       givenOptions.indexes = db
-//       callback(null, givenOptions)
-//     })
-//   }
-//   else {
-//     callback(null, givenOptions)
-//   }
-// }

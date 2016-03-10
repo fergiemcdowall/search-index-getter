@@ -1,10 +1,10 @@
 {
   "name": "search-index-getter",
-  "version": "0.0.4",
+  "version": "0.0.5",
   "description": "A lib for retrieving individual documents from a search-index corpus",
-  "main": "docGetter.js",
+  "main": "index.js",
   "scripts": {
-    "test": "tape"
+    "test": "rm -rf test/sandbox && mkdir test/sandbox && standard && tape test/test.js"
   },
   "repository": {
     "type": "git",
@@ -28,5 +28,11 @@
     "levelup": "^1.3.1",
     "lodash": "^4.6.1",
     "term-vector": "0.0.12"
+  },
+  "devDependencies": {
+    "reuters-21578-json": "0.0.6",
+    "search-index-adder": "0.0.11",
+    "standard": "^6.0.8",
+    "tape": "^4.5.1"
   }
 }

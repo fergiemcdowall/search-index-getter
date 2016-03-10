@@ -1,32 +1,29 @@
 const _ = require('lodash')
 const async = require('async')
 const bunyan = require('bunyan')
-const leveldown = require('leveldown')
 const levelup = require('levelup')
 const tv = require('term-vector')
 
 module.exports = function (givenOptions, callback) {
   var docGetter = {}
-  getOptions(givenOptions, function(err, options) {
+  getOptions(givenOptions, function (err, options) {
     docGetter.getDoc = function (docID, callback) {
       options.indexes.get('DOCUMENT￮' + docID + '￮', function (err, value) {
         if (err) {
-          return callback(err, null);
-        }
-        else {
-          return callback(null, value);
+          return callback(err, null)
+        } else {
+          return callback(null, value)
         }
       })
     }
-    return callback(err, docGetter);
+    return callback(err, docGetter)
   })
 }
 
-
-var getOptions = function(givenOptions, callbacky) {
+var getOptions = function (givenOptions, callbacky) {
   givenOptions = givenOptions || {}
   async.parallel([
-    function(callback) {
+    function (callback) {
       var defaultOps = {}
       defaultOps.deletable = true
       defaultOps.fieldedSearch = true
@@ -42,19 +39,18 @@ var getOptions = function(givenOptions, callbacky) {
       })
       callback(null, defaultOps)
     },
-    function(callback){
+    function (callback) {
       if (!givenOptions.indexes) {
         levelup(givenOptions.indexPath || 'si', {
           valueEncoding: 'json'
-        }, function(err, db) {
-          callback(null, db)
+        }, function (err, db) {
+          callback(err, db)
         })
-      }
-      else {
+      } else {
         callback(null, null)
       }
     }
-  ], function(err, results){
+  ], function (err, results) {
     var options = _.defaults(givenOptions, results[0])
     if (results[1] != null) {
       options.indexes = results[1]

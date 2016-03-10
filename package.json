@@ -30,8 +30,11 @@
     "term-vector": "0.0.12"
   },
   "devDependencies": {
+    "browserify": "^13.0.0",
+    "level-js": "^2.2.3",
     "reuters-21578-json": "0.0.6",
     "search-index-adder": "0.0.11",
+    "selenium-webdriver": "^2.52.0",
     "standard": "^6.0.8",
     "tape": "^4.5.1"
   }

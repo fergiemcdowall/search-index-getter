@@ -4,7 +4,8 @@
   "description": "A lib for retrieving individual documents from a search-index corpus",
   "main": "index.js",
   "scripts": {
-    "test": "rm -rf test/sandbox && mkdir test/sandbox && standard && tape test/test.js"
+    "browserify": "browserify test/browserify-test-uncompiled.js > test/sandbox/bundle.js",
+    "test": "rm -rf test/sandbox && mkdir test/sandbox && standard && npm run browserify && tape test/*-test.js"
   },
   "repository": {
     "type": "git",
@@ -31,9 +32,10 @@
   },
   "devDependencies": {
     "browserify": "^13.0.0",
+    "chromedriver": "^2.21.2",
     "level-js": "^2.2.3",
     "reuters-21578-json": "0.0.6",
-    "search-index-adder": "0.0.11",
+    "search-index-adder": "0.0.12",
     "selenium-webdriver": "^2.52.0",
     "standard": "^6.0.8",
     "tape": "^4.5.1"

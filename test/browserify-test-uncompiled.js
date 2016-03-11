@@ -7,11 +7,16 @@ levelup('test/sandbox/simpleIndexing', {
   valueEncoding: 'json',
   db: require('level-js')
 }, function (err, db) {
-  sia({indexes: db}, function (err, indexer) {  //causes woe in browsers
+  if (err) console.log(err)
+  sia({indexes: db}, function (err, indexer) { // causes woe in browsers
+    if (err) console.log(err)
     indexer.add(batch, {}, function (err) {
+      if (err) console.log(err)
       sig({indexes: db}, function (err, getter) {
+        if (err) console.log(err)
         getter.getDoc('4', function (err, doc) {
-          document.getElementById("result").innerHTML = doc.title
+          if (err) console.log(err)
+          document.getElementById('result').innerHTML = doc.title
           console.log(doc)
         })
       })

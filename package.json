@@ -4,8 +4,8 @@
   "description": "A lib for retrieving individual documents from a search-index corpus",
   "main": "index.js",
   "scripts": {
-    "browserify": "browserify test/browserify-test-uncompiled.js > test/sandbox/bundle.js",
-    "test": "rm -rf test/sandbox && mkdir test/sandbox && standard && npm run browserify && tape test/*-test.js"
+    "test": "rm -rf test/sandbox && mkdir test/sandbox && standard && tape test/node-test.js",
+    "test-browserify": "rm -rf test/sandbox && mkdir test/sandbox && browserify test/browserify-test-uncompiled.js > test/sandbox/bundle.js && tape test/selenium-test.js"
   },
   "repository": {
     "type": "git",

@@ -1,4 +1,4 @@
-const _ = require('lodash')
+const _defaults = require('lodash.defaults')
 const async = require('async')
 const bunyan = require('bunyan')
 const levelup = require('levelup')
@@ -51,7 +51,7 @@ var getOptions = function (givenOptions, callbacky) {
       }
     }
   ], function (err, results) {
-    var options = _.defaults(givenOptions, results[0])
+    var options = _defaults(givenOptions, results[0])
     if (results[1] != null) {
       options.indexes = results[1]
     }
